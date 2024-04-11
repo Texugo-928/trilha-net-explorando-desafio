@@ -1,6 +1,8 @@
 ﻿using System.Text;
 using DesafioProjetoHospedagem.Models;
 
+//TODO: Testar no VSCode...
+
 Console.OutputEncoding = Encoding.UTF8;
 
 // Cria os modelos de hóspedes e cadastra na lista de hóspedes
