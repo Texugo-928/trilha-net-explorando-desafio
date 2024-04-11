@@ -15,16 +15,22 @@ namespace DesafioProjetoHospedagem.Models
 
         public void CadastrarHospedes(List<Pessoa> hospedes)
         {
-            // TODO: Verificar se a capacidade é maior ou igual ao número de hóspedes sendo recebido
-            // *IMPLEMENTE AQUI*
-            if (true)
+            if (Suite == null || Suite.Capacidade == null)
             {
-                Hospedes = hospedes;
+                throw new Exception("ERRO: A suite não foi previamente instanciada");
             }
             else
             {
-                // TODO: Retornar uma exception caso a capacidade seja menor que o número de hóspedes recebido
-                // *IMPLEMENTE AQUI*
+                bool validadorCapacidade = (Suite.Capacidade >= hospedes.Length);
+
+                if (validadorCapacidade)
+                {
+                    Hospedes = hospedes;
+                }
+                else
+                {
+                    throw new Exception("ERRO: A capacidade da suite é menor que o número de hóspedes");
+                }
             }
         }
 
